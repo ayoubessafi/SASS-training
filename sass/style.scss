@@ -1,0 +1,167 @@
+$color-blue: hsl(223, 87%, 63%);
+$pale-blue: hsl(223, 100%, 88%);
+$light-red: hsl(354, 100%, 66%);
+$gray: hsl(0, 0%, 59%);
+$dark-blue: hsl(209, 33%, 12%);
+$color-silver: silver;
+$width-responsive: 600px;
+
+body {
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 90px;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+
+}
+
+@mixin button {
+    background-color:$color-blue ;
+    width:$width-responsive/4 ;
+    font-size: 20px;
+    line-height: 50px ;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    margin-left: 20px;
+}
+
+
+%btn-buttons{
+    width: $width-responsive/1.5;
+    color: #fff;
+    font-size: 20px;
+    line-height: 50px;
+    border-radius: 30px;
+    border: 1px solid $gray;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; 
+    &__soon--center{
+        font-weight: 80;
+        color: $gray;
+    }
+    &__subscribe--center{
+        font-weight: 80;
+    }
+}
+
+.form{
+   
+    display: flex;
+    justify-content: center;
+        &__input-div{
+            @extend %btn-buttons;
+        }
+        &__button-div--submit{
+           @include button;
+           &:hover{
+               background-color: $dark-blue;
+           }
+        }
+    
+}
+
+.dash{
+    display: flex;
+    justify-content: center;
+    &__dashboard{
+        width: $width-responsive;
+        margin-top: 5em;
+
+    }
+
+
+   
+}
+
+#social{
+    display: flex;
+    justify-content: center;
+    
+    .fab{
+        padding: 10px;
+        margin: 10px;
+        margin-top: 5em;
+        border: 1px solid $gray;
+        border-radius: 50px;
+        color: $color-blue;
+        &:hover{
+            background-color: $dark-blue;
+        }
+        
+    }
+}
+
+h4{
+    display: flex;
+    justify-content: center;
+    color: $gray;
+    font-size: 10px;
+    font-weight: 10;
+    
+}
+
+.attribution {
+    color: $color-blue;
+    font-size: 10px;
+    a {
+        text-decoration: none;
+        color: $color-blue;
+        font-size: 10px;
+        
+    }   
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .form{
+        display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+        &__button-div{
+            width: $width-responsive/1.5;
+            margin-left: 0;
+            margin-top: 2%;
+        }
+        
+        
+        
+    }
+    .dash{
+        &__dashboard{
+            width: $width-responsive/1.5;
+        }
+        
+    }
+
+    h4{
+        font-size: 12px;
+        
+       
+    }
+
+    .attribution{
+        font-size: 12px;
+        
+    }
+
+    }
+
+
